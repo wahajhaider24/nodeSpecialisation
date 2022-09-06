@@ -5,7 +5,7 @@ let rect = {
 
 function solveRect(l, b) {
 
-    console.log("Solving>>>>", l, b);
+    console.log("Solving>>>>>", l, b);
     if (l <= 0 || b <= 0) {
         console.log("You are Dumb")
     }
