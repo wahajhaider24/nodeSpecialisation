@@ -1,19 +1,17 @@
-let rect = {
-    perimeter: (x, y) => (2 * (x + y)),
-    area: (x, y) => (x * y)
-};
-
+const rect = require('./rectangle')
 function solveRect(l, b) {
 
     console.log("Solving>>>>>", l, b);
-    if (l <= 0 || b <= 0) {
-        console.log("You are Dumb")
-    }
-    else {
-        console.log("The perimeter of recatangle is" + rect.perimeter(l, b));
-        console.log("The area of recatangle is" + rect.area(l, b));
-    }
+    rect(l, b, (err, rectangle) => {
+        if (err) {
+            console.log("ERROR:", err.message);
+        }
+        else {
+            console.log("The area of the rectangle=", rectangle.area);
+            console.log("The perimeter of the rectangle=", rectangle.perimeter);
+        }
+    })
 }
 
-solveRect(2, 4);
-solveRect(1, 2);
+solveRect(parseInt(0), parseInt(0));
+solveRect(parseInt(5), parseInt(2));
